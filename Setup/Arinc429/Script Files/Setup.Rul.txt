@@ -1,0 +1,73 @@
+//===========================================================================
+//
+//  File Name:    Setup.rul
+//
+//  Description:  Blank setup main script file
+//
+//  Comments:     Blank setup is an empty setup project. If you want to
+//				  create a new project via. step-by step instructions use the
+//				  Project Assistant.
+//
+//===========================================================================
+
+// Included header files ----------------------------------------------------
+#include "ifx.h"
+
+// Note: In order to have your InstallScript function executed as a custom
+// action by the Windows Installer, it must be prototyped as an 
+// entry-point function.
+
+// The keyword export identifies MyFunction() as an entry-point function.
+// The argument it accepts must be a handle to the Installer database.
+    
+/* export prototype MyFunction(HWND); */
+
+//---------------------------------------------------------------------------
+// OnFilterComponents
+//
+// The OnFilterComponents event is called by the framework to filter out
+// components in each feature by language and platform, override this
+// event to perform custom filtering.
+//
+// Note: This event will not be called automatically in a
+// program...endprogram style setup.
+//---------------------------------------------------------------------------
+/*
+function OnFilterComponents()
+begin
+    // Filter file groups by current platform.
+    FeatureFilterOS(MEDIA, 0, ISOSL_ALL, TRUE);
+    FeatureFilterOS(MEDIA, 0, SYSINFO.nISOSL, FALSE);
+ 
+    // Filter file groups by current language.
+    FeatureFilterLanguage(MEDIA, ISLANG_ALL, TRUE);
+    FeatureFilterLanguage(MEDIA, STANDARD_SELECTED_LANGUAGE, FALSE);   
+    
+     LaunchAppAndWait(SUPPORTDIR^"vcredist_x86_vs2008.exe","",WAIT);
+end;
+*/
+//---------------------------------------------------------------------------
+// OnFirstUIAfter
+//
+// The OnFirstUIAfter event called by the framework after the file transfer
+// of the setup when the setup is running in first install mode. By default
+// this event displays UI that informs the end user that the setup has been
+// completed successfully.
+//---------------------------------------------------------------------------
+function OnFirstUIAfter()
+    STRING szFileName, szFolder, szMsg1, szMsg2;
+    NUMBER nResult; 
+begin
+	// 创建删除快捷方式
+	szFileName=UNINSTALL_STRING + "/UNINSTALL";
+	nResult = StrFind(szFileName, ".exe");
+	if nResult >= 0 then
+		StrSub(szMsg1, szFileName, 0, nResult + 4);
+		StrSub(szMsg2, szFileName, nResult + 4, 200);
+		LongPathToQuote(szMsg1, FALSE);
+		LongPathToQuote(szMsg2, FALSE);
+		szFileName = "\"" + szMsg1 + "\"" + szMsg2;
+	endif;       
+	
+	AddFolderIcon(FOLDER_PROGRAMS^"CRDTech\\Arinc429","Uninstall",szFileName,WINDIR,"",0,"",REPLACE);
+end;

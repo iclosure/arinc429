@@ -1,0 +1,106 @@
+; 
+; driver : CRD_429_Px
+; 
+; Copyright (C) 2011-2014 CRDTech Inc. All Right Reserved.
+;
+
+; -------------------------------------------------------------
+
+[Version]
+signature = "$WINDOWS NT$"
+Class     = %ClassName%
+ClassGuid = {9E208E47-B593-4DE2-81D0-4AC96098328A}
+Provider  = %ProviderName%
+DriverVer =06/06/2014,2.3.0000.00003
+
+[ClassInstall32]
+Addreg = DeviceClassReg
+
+[DeviceClassReg]
+HKR,,,0,%DeviceClassName%
+HKR,,Icon,,-5
+
+[Manufacturer]
+%ProviderName%=Arinc429,NTx86,NTamd64,NTia64
+
+[Arinc429]
+%DeviceDesc% = Device_Install, PCI\VEN_BE00&DEV_1080&SUBSYS_90540429&REV_0B
+
+[Arinc429.NTx86]
+%DeviceDesc% = Device_Install, PCI\VEN_BE00&DEV_1080&SUBSYS_90540429&REV_0B
+
+[Arinc429.NTamd64]
+%DeviceDesc% = Device_Install, PCI\VEN_BE00&DEV_1080&SUBSYS_90540429&REV_0B
+
+[Arinc429.NTia64]
+%DeviceDesc% = Device_Install, PCI\VEN_BE00&DEV_1080&SUBSYS_90540429&REV_0B
+
+[Device_Install]
+AddReg = Device_Install.Reg
+CopyFiles = Device_Install.CopyFiles, Device_Install.CopyFilesSystem
+
+[Device_Install.Services]
+AddService = CRD_429_Px, 0x00000002,Device_Install.SvcInstall,Device_Install.AddEvtLog
+
+[Device_Install.Reg]
+;HKR,,EnumPropPages32,,"crdarincprop.dll,ArincPropPageProvider"
+
+[Device_Install.CopyFiles]
+CRD_429_Px.sys
+
+[Device_Install.CopyFilesSystem]
+;crdarincprop.dll,,,2
+
+[Device_Install.SvcInstall]
+DisplayName   = %DriverSvcName%
+Description   = %DriverSvcDesc%
+ServiceType   = 1
+StartType     = 3
+ErrorControl  = 1
+ServiceBinary = %12%\CRD_429_Px.sys
+LoadOrderGroup= Extended base
+
+[Device_Install.AddEvtLog]
+
+;----------------------------------------------------------------------------
+
+[SourceDisksFiles]
+1 = %DISK_NAME%,,,\i386
+2 = %DISK_NAME%,,,\amd64
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll = 1
+
+[SourceDisksNames]
+1 = %DISK_NAME%,
+
+[DestinationDirs]
+CoInstallers_CopyFiles = 11
+Device_Install.CopyFiles = 12
+Device_Install.CopyFilesSystem = 11
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll = 2
+
+[Device_Install.CoInstallers]
+AddReg = CoInstaller_AddReg
+CopyFiles = CoInstaller_CopyFiles
+
+[CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000,"WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll,WdfCoInstaller"
+
+[CoInstaller_CopyFiles]
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll
+
+[Device_Install.Wdf]
+KmdfService = CRD_429_Px,Device_Install.KmdfService
+
+[Device_Install.KmdfService]
+KmdfLibraryVersion = $KMDFVERSION$
+
+;----------------------------------------------------------------------------
+
+[Strings]
+ProviderName    = "CRDTech Inc"
+DeviceDesc      = "CRDTech ARINC429 (PCI BUS)"
+DriverSvcName   = "CRD_429_Px"
+DriverSvcDesc   = "CRD_429_Px Services"
+DISK_NAME       = "CRDTech PCI429 Install Disk"
+ClassName       = "PCI429"
+DeviceClassName = "CRDTech Serials"

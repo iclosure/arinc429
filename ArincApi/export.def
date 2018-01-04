@@ -1,0 +1,25 @@
+LIBRARY	"arapi"
+
+;SECTIONS
+;	.shared_arapi READ WRITE SHARED
+	
+EXPORTS
+	ar_set_userhandle
+	ar_board_num
+	ar_board_type
+	ar_loadslv
+	ar_go
+	ar_close
+	ar_reset
+	ar_set_config
+	ar_get_config
+	ar_label_filter
+	ar_num_rchans
+	ar_num_xchans
+	ar_putword
+	ar_putwords
+	ar_getnext
+	ar_getnextt
+	ar_getwords
+	ar_getwordst
+;	ar_get_latest

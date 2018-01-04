@@ -1,0 +1,20 @@
+;LIBRARY	"wtapi"
+
+;SECTIONS
+;	.shared_arapi READ WRITE SHARED
+	
+EXPORTS
+	SetUserHandle
+	ar_loadslv
+	ar_go
+	ar_close
+	ar_reset
+	ar_set_config
+	ar_get_config
+	ar_label_filter
+	ar_num_rchans
+	ar_num_xchans
+	ar_putword
+	ar_getnext
+	ar_getnextt
+;	ar_get_latest

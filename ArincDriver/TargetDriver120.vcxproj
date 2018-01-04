@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="objchk_win7_x86|Win32">
+      <Configuration>objchk_win7_x86</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="objchk_wxp_x86|Win32">
+      <Configuration>objchk_wxp_x86</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="objfre_win7_x86|Win32">
+      <Configuration>objfre_win7_x86</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="objfre_wxp_x86|Win32">
+      <Configuration>objfre_wxp_x86</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>ArincDriver</ProjectName>
+    <ProjectGuid>{98CB7BD3-E5B2-4936-8CD1-336BB859005B}</ProjectGuid>
+    <RootNamespace>ArincDriver</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='objchk_win7_x86|Win32'">
+    <PlatformToolset>v120</PlatformToolset>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='objchk_wxp_x86|Win32'" Label="Configuration">
+    <PlatformToolset>v120</PlatformToolset>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='objfre_win7_x86|Win32'" Label="Configuration">
+    <PlatformToolset>v120</PlatformToolset>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='objfre_wxp_x86|Win32'" Label="Configuration">
+    <PlatformToolset>v120</PlatformToolset>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.60610.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='objchk_win7_x86|Win32'">
+    <OutDir>$(ProjectDir)</OutDir>
+    <NMakeBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CRD_429_Px chk win7 x86</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CRD_429_Px chk win7 x86 -rebuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CRD_429_Px chk win7 x86 -clear</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(WDKPATH)\inc\api;$(WDKPATH)\inc\crt;$(WDKPATH)\inc\ddk;$(WDKPATH)\inc\wdf\kmdf\1.9;$(SMARTKITS_HOME)\Kernel\krnlcom\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakePreprocessorDefinitions>_X86_;DBG;_WIN32_WINNT=0x0500;KERNEL_FRAMEWORK_WDF;DEVICE_PCI429</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='objchk_wxp_x86|Win32'">
+    <OutDir>$(ProjectDir)</OutDir>
+    <NMakeBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CRD_429_Px chk wxp x86</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CRD_429_Px chk wxp x86 -rebuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CRD_429_Px chk wxp x86 -clear</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(WDKPATH)\inc\api;$(WDKPATH)\inc\crt;$(WDKPATH)\inc\ddk;$(WDKPATH)\inc\wdf\kmdf\1.9;$(SMARTKITS_HOME)\Kernel\krnlcom\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakePreprocessorDefinitions>_X86_;DBG;_WIN32_WINNT=0x0500;KERNEL_FRAMEWORK_WDF;DEVICE_PCI429</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='objfre_win7_x86|Win32'">
+    <OutDir>$(ProjectDir)</OutDir>
+    <NMakeBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CRD_429_Px fre win7 x86</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CRD_429_Px fre win7 x86 -rebuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CRD_429_Px fre win7 x86 -clear</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(WDKPATH)\inc\api;$(WDKPATH)\inc\crt;$(WDKPATH)\inc\ddk;$(WDKPATH)\inc\wdf\kmdf\1.9;$(SMARTKITS_HOME)\Kernel\krnlcom\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakePreprocessorDefinitions>_X86_;_WIN32_WINNT=0x0500;KERNEL_FRAMEWORK_WDF;DEVICE_PCI429</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='objfre_wxp_x86|Win32'">
+    <OutDir>$(ProjectDir)</OutDir>
+    <NMakeBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CRD_429_Px fre wxp x86</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CRD_429_Px fre wxp x86 -rebuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CRD_429_Px fre wxp x86 -clear</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(WDKPATH)\inc\api;$(WDKPATH)\inc\crt;$(WDKPATH)\inc\ddk;$(WDKPATH)\inc\wdf\kmdf\1.9;$(SMARTKITS_HOME)\Kernel\krnlcom\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakePreprocessorDefinitions>_X86_;_WIN32_WINNT=0x0500;KERNEL_FRAMEWORK_WDF;DEVICE_PCI429</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='objchk_win7_x86|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='objchk_wxp_x86|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='objfre_win7_x86|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='objfre_wxp_x86|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TargetDriver.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="buildex.bat" />
+    <None Include="CRD_429_Px.inx" />
+    <None Include="makefile.inc" />
+    <None Include="sources" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="adddev.c" />
+    <ClCompile Include="entry.c" />
+    <ClCompile Include="file.c" />
+    <ClCompile Include="interrupt.c" />
+    <ClCompile Include="pnp.c" />
+    <ClCompile Include="ioctl.c" />
+    <ClCompile Include="read.c" />
+    <ClCompile Include="write.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common.h" />
+    <ClInclude Include="adddev.h" />
+    <ClInclude Include="file.h" />
+    <ClInclude Include="public.h" />
+    <ClInclude Include="interrupt.h" />
+    <ClInclude Include="pnp.h" />
+    <ClInclude Include="precomp.h" />
+    <ClInclude Include="ioctl.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="regdef.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

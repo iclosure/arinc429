@@ -1,0 +1,7 @@
+LIBRARY	"crdarincprop"
+
+;SECTIONS
+;	.shared READ WRITE SHARED
+	
+EXPORTS
+	ArincPropPageProvider
